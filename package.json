@@ -1,0 +1,11 @@
+{
+  "name": "PXEmbeddedCalculator",
+  "version": "1.0.0",
+  "cordova": {
+    "id": "PXEmbeddedCalculator",
+    "platforms": [
+      "android"
+    ]
+  },
+  "description": "Plugin that can interact with Fino Tech's UIDAI SDK"
+}

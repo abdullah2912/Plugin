@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="PXEmbeddedCalculator" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>PXEmbeddedCalculator</name>
+    <js-module name="PXEmbeddedCalculator" src="www/PXEmbeddedCalculator.js">
+        <clobbers target="cordova.plugins.PXEmbeddedCalculator" />
+    </js-module>
+
+
+
+    <platform name="android">
+        <js-module src="www/PXEmbeddedCalculator.js" name="PXEmbeddedCalculator">
+            <runs/>
+
+            <!-- This is the window variable name you want, like window.MyCordovaPlugin -->
+            <clobbers target="PXEmbeddedCalculator" />
+        </js-module>
+
+        <framework src="com.android.support:appcompat-v7:24.1.1" />
+        <framework src="com.android.support:design:24.1.1" />
+        <framework src="com.android.support:multidex:1.0.1" />
+        
+        <framework src="com.loopj.android:android-async-http:1.4.9" />
+        <framework src="org.apache.httpcomponents:httpmime:4.2.3" />
+        <framework src="org.bouncycastle:bcprov-jdk16:1.45" />
+        <framework src="com.afollestad.material-dialogs:core:0.8.5.9" />
+        <framework src="com.google.code.gson:gson:2.7" />
+
+        <!-- This will reference gradle file in your plugin-->
+        <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="PXEmbeddedCalculator">
+                <param name="android-package" value="com.streebo.bsli.productXpress.PXEmbeddedCalculator" />
+            </feature>
+        </config-file>
+
+        <!--<source-file src="src/android/com/streebo/plugins/UIDAIPlugin.java" target-dir="src/com/streebo/plugins/" />  -->
+
+        <!-- com.bsli.productXpress -->
+        <source-file src="src/android/com/streebo/bsli/productXpress/PXEmbeddedCalculator.java" target-dir="src/com/streebo/bsli/productXpress/" />
+        <source-file src="src/android/com/streebo/bsli/productXpress/PXHandler.java" target-dir="src/com/streebo/bsli/productXpress/" />
+
+        <!-- com.bsli.productXpress.embeddedCalculator -->
+        <source-file src="src/android/com/streebo/bsli/productXpress/embeddedCalculator/Calculation.java" target-dir="src/com/streebo/bsli/productXpress/embeddedCalculator/" />
+        <source-file src="src/android/com/streebo/bsli/productXpress/embeddedCalculator/FileUtil.java" target-dir="src/com/streebo/bsli/productXpress/embeddedCalculator/" />
+        
+    </platform>
+
+</plugin>
